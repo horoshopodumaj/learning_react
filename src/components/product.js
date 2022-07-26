@@ -1,9 +1,6 @@
-import { useState } from "react";
-import useAmount from "../hooks/use-amount";
+import counter from "../hocs/counter";
 
-export default function Product({ product }) {
-    const { amount, decrement, increment } = useAmount(0);
-
+function Product({ product, amount, decrement, increment }) {
     return (
         <div>
             <p>{product.name}</p>
@@ -14,3 +11,5 @@ export default function Product({ product }) {
         </div>
     );
 }
+
+export default counter(Product)
