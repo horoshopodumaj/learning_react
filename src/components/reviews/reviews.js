@@ -1,4 +1,5 @@
 import Review from './review';
+import styles from './reviews.module.css';
 
 const Reviews = ({ reviews }) => {
   return (

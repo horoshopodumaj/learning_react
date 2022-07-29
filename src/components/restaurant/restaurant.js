@@ -2,6 +2,8 @@ import { useMemo } from 'react';
 import Menu from '../menu';
 import Reviews from '../reviews';
 import Rate from '../rate';
+import Banner from '../banner';
+import styles from './restaurant.module.css';
 
 const Restaurant = ({ restaurant }) => {
   const { name, menu, reviews } = restaurant;

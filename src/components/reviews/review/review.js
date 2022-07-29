@@ -1,4 +1,4 @@
-import Rate from './rate';
+import Rate from '../../rate';
 import styles from './review.module.css';
 
 const Review = ({ user, text, rating }) => (
