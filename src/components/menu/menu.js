@@ -1,8 +1,13 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import Product from '../product';
 import styles from './menu.module.css'
 
 class Menu extends Component {
+  static propTypes = {
+    menu: PropTypes.arrayOf(PropTypes.shape({id: PropTypes.string.isRequired,}).isRequired).isRequired,
+  };
+  
   render() {
     const {menu} = this.props;
     return (
