@@ -4,10 +4,15 @@ import counter from "../../hocs/counter";
 import styles from './product.module.css';
 
 import Button from "../button";
+import { useEffect } from 'react';
 
-function Product({ product, amount, decrement, increment }) {
+function Product({ product, amount, decrement, increment, fetchData }) {
+    useEffect(() => {
+        fetchData?.(product.id);
+    }, []);
+
     return (
-        <div className={styles.product}>
+        <div className={styles.product} data-id='product'>
             <div className={styles.content}>
                 <div>
                     <h4 className={styles.title}>{product.name}</h4>
@@ -16,10 +21,10 @@ function Product({ product, amount, decrement, increment }) {
                 </div>
                 <div>
                     <div className={styles.counter}>
-                        <div className={styles.count}>{amount}</div>
+                        <div className={styles.count} data-id='product-amount'>{amount}</div>
                         <div className={styles.buttons}>
                             <Button onClick={decrement} icon='minus' />
-                            <Button onClick={increment} icon='plus' />
+                            <Button onClick={increment} data-id='product-increment' icon='plus' />
                         </div>
                     </div>
                 </div>
