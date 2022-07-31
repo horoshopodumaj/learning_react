@@ -8,8 +8,17 @@ class Menu extends Component {
     menu: PropTypes.arrayOf(PropTypes.shape({id: PropTypes.string.isRequired,}).isRequired).isRequired,
   };
   
+  state = {error:null};
+
+  componentDidCatch(error) {
+    this.setState({error});
+  }
   render() {
     const {menu} = this.props;
+
+    if (this.state.error) {
+      return <p>Меню этого ресторана сейчас недоступно :(</p>;
+    }
     return (
       <div className={styles.menu}>
         <div>
