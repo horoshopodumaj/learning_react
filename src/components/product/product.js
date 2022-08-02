@@ -23,7 +23,7 @@ function Product({ product, amount, decrement, increment, fetchData }) {
                     <div className={styles.counter}>
                         <div className={styles.count} data-id='product-amount'>{amount}</div>
                         <div className={styles.buttons}>
-                            <Button onClick={decrement} icon='minus' />
+                            <Button onClick={decrement} data-id='product-decrement' icon='minus' />
                             <Button onClick={increment} data-id='product-increment' icon='plus' />
                         </div>
                     </div>
