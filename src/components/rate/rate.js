@@ -6,7 +6,7 @@ import styles from './rate.module.css';
 const Rate = ({ value}) => (
   <div>
     {[...Array(5)].map((_, i) => (
-      <Star key={i} className= {cn(styles.star, {[styles.checked]: i <= value-1})}/>
+      <Star key={i} data-id={i <= value-1 ? 'full-star' : 'empty-star'} className= {cn(styles.star, {[styles.checked]: i <= value-1})}/>
     ))}
   </div>
 );
