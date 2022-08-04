@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import counter from "../../hocs/counter";
 import styles from './product.module.css';
 
 import Button from "../button";
@@ -44,4 +44,7 @@ Product.propTypes = {
     increment: PropTypes.func,
 };
 
-export default counter(Product)
+const mapStateProps = (state) => ({
+    amount: state.order,
+})
+export default connect(mapStateProps)(Product)
